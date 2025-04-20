@@ -17,9 +17,26 @@ const NavigationBar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md fixed w-full z-50 top-0 left-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
+          {/* Logo and Platform Name */}
+          <Link to="/" className="flex items-center space-x-2">
+            <svg
+              className="h-8 w-8 text-blue-600"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+            <span className="font-bold text-xl text-blue-600 select-none">MindEase</span>
+          </Link>
+
+          {/* Navigation Links */}
           <div className="flex space-x-4">
             {links.map(({ to, label }) => (
               <Link
